@@ -8,5 +8,5 @@ Icon=xpilot.png
 Exec=xpilots
 Terminal=true
 Type=Application
-Categories=Application;Game;Arcade
+Categories=Application;Game;ArcadeGame;
 # vi: encoding=utf-8
