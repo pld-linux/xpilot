@@ -57,21 +57,29 @@ xmkmf -a
 %{__make} \
 	CC="%{__cc}" \
 	CDEBUGFLAGS="%{rpmcflags}" \
-	INSTLIBDIR=%{_datadir}/%{name}
+	PREFIX=/usr \
+	INSTLIBDIR=%{_datadir}/%{name} \
+	INSTBINDIR=%{_bindir} \
+	INSTMANDIR=%{_datadir}/man/man6
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_applnkdir}/Games/Arcade,%{_pixmapsdir}}
+install -d $RPM_BUILD_ROOT{%{_desktopdir},%{_pixmapsdir}}
 
 %{__make} install install.man \
 	DESTDIR=$RPM_BUILD_ROOT \
-	INSTLIBDIR=%{_datadir}/%{name}
+	PREFIX=/usr \
+	INSTLIBDIR=%{_datadir}/%{name} \
+	INSTBINDIR=%{_bindir} \
+	INSTMANDIR=%{_datadir}/man/man6
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_pixmapsdir}
-install %{SOURCE2} %{SOURCE3} %{SOURCE4} $RPM_BUILD_ROOT%{_applnkdir}/Games/Arcade
+install %{SOURCE2} %{SOURCE3} %{SOURCE4} $RPM_BUILD_ROOT%{_desktopdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+ 
 
 %files
 %defattr(644,root,root,755)
@@ -79,5 +87,5 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/xpilot
 %{_mandir}/man?/*
-%{_applnkdir}/Games/Arcade/*
+%{_desktopdir}/*
 %{_pixmapsdir}/*
