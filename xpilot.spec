@@ -35,7 +35,6 @@ latanie podczas gry w trybie ,,wycieczki''.
 %patch0 -p1
 
 %build
-%attr(755,root,root) %{_bindir}/xmkmf
 %{__make} Makefiles
 %{__make} \
 	CXXDEBUGFLAGS="%{rpmcflags}" \
