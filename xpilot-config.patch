@@ -1,0 +1,31 @@
+diff -urN xpilot-4.3.1.org/Local.config xpilot-4.3.1/Local.config
+--- xpilot-4.3.1.org/Local.config	Sun Apr 22 16:38:10 2001
++++ xpilot-4.3.1/Local.config	Sun Apr 22 16:40:46 2001
+@@ -36,12 +36,12 @@
+ #define	LocalGuru xpilot@xpilot.org	/* The one to contact for problems */
+ #endif /* LocalGuru */
+ 
+-PREFIX = /usr/local/games
++PREFIX = /usr/X11R6
+ 
+ /* Manual pages for games usually go to section 6. */
+ MANSUFFIX = 6
+ INSTMANDIR = $(PREFIX)/man/man$(MANSUFFIX)
+-INSTLIBDIR = $(PREFIX)/lib/xpilot
++INSTLIBDIR = $(PREFIX)/lib/X11/xpilot
+ INSTBINDIR = $(PREFIX)/bin
+ 
+ /* #define Log		/* Try to log every server start to log file */
+@@ -49,9 +49,9 @@
+ /* #define Silent	/* Makes the server real silent */
+ /* #define ServerSound	/* Turns on sound support in the server (not client) */
+ 
+-/* #define DoublebufferExtension	/* support for X Doublebuffer Extension */
+-/* #define MultibufferExtension 	/* support for X Multibuffer Extension */
+-/* #define Joystick	/* Joystick support for Linux, needs joystick 0.7 */
++#define DoublebufferExtension	/* support for X Doublebuffer Extension */
++#define MultibufferExtension 	/* support for X Multibuffer Extension */
++#define Joystick	/* Joystick support for Linux, needs joystick 0.7 */
+ 
+ 
+ /*
