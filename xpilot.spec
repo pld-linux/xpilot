@@ -3,7 +3,7 @@ Name:		xpilot
 Version:	3.6.2
 Release:	6
 Copyright:	GPL
-Group:		Amusements/Games
+Group:		Games
 Source:		ftp://ftp.cs.uit.no/pub/games/xpilot/%{name}-%{version}.tar.gz
 Url:		http://www.cs.uit.no/XPilot/
 Patch:		xpilot-3.6.1-config.patch
