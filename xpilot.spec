@@ -46,7 +46,7 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	INSTLIBDIR=%{_datadir}/%{name}
 
-gzip -9nf README.txt doc/{TODO,README*,F*,C*,B*}	
+gzip -9nf README.txt doc/{TODO,README*,F*,C*,B*}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
