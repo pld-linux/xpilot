@@ -8,5 +8,5 @@ Icon=xpilot.png
 Exec=xp-mapedit
 Terminal=false
 Type=Application
-Categories=Application;Game;ArcadeGame;
+Categories=Game;ArcadeGame;
 # vi: encoding=utf-8
