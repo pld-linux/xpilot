@@ -28,8 +28,8 @@ set up xpilot clients on all of the players' machines.
 
 %build
 xmkmf
-make Makefiles
-make CXXDEBUGFLAGS="$RPM_OPT_FLAGS" \
+%{__make} Makefiles
+%{__make} CXXDEBUGFLAGS="$RPM_OPT_FLAGS" \
 	CDEBUGFLAGS="$RPM_OPT_FLAGS" \
 	INSTLIBDIR=%{_datadir}/%{name}
 
@@ -37,7 +37,7 @@ make CXXDEBUGFLAGS="$RPM_OPT_FLAGS" \
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT/etc/X11/wmconfig
 
-make install install.man DESTDIR=$RPM_BUILD_ROOT \
+%{__make} install install.man DESTDIR=$RPM_BUILD_ROOT \
 	INSTLIBDIR=%{_datadir}/%{name}
 
 strip --strip-unneeded $RPM_BUILD_ROOT%{_bindir}/*
