@@ -22,8 +22,6 @@ URL:		http://www.xpilot.org/
 BuildRequires:	XFree86-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
-%define		_mandir		%{_prefix}/man
 
 %description
 Xpilot is an X Window System based multiplayer game of aerial combat.
