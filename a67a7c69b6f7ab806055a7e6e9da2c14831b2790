@@ -1,0 +1,10 @@
+- updated to 4.5.4,
+- updated URL and Source url,
+- new png icon for desktop file,
+- added desktop files for map editor and game server,
+- merge translations from Conectiva,
+- use proper CC,
+- updated %files nad use new %doc.
+TODO:
+- separate clent, server and map edit subpackages,
+- maybe move all xpilot desktop files to Games/Arcade/XPilot (?)
