@@ -5,8 +5,6 @@ Version:	4.3.1
 Release:	1
 License:	GPL
 Group:		X11/Applications/Games
-Group(de):	X11/Applikationen/Spiele
-Group(pl):	X11/Aplikacje/Gry
 Source0:	ftp://ftp.cs.uit.no/pub/games/xpilot/%{name}-%{version}.tar.gz
 Patch0:		%{name}-config.patch
 URL:		http://www.cs.uit.no/XPilot/
