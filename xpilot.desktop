@@ -1,4 +1,5 @@
 Name=xpilot
 Type=Application
-Comment=xpilot game (requires server)"
+Comment=xpilot game (requires server)
+Comment[pl]=Gra xpilot (wymaga serwera)
 Exec=xterm -e xpilot -join
