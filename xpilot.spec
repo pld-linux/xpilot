@@ -5,11 +5,11 @@
 #
 Summary:	An X Window System based multiplayer aerial combat game
 Summary(es):	Juego de vuelo en estilo arcade
-Summary(pl):	Sieciowa gra symuluj±ca walki powietrzne
+Summary(pl):	Gra sieciowa symuluj±ca walki powietrzne
 Summary(pt_BR):	Jogo de vôo no estilo arcade
 Name:		xpilot
 Version:	4.5.4
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications/Games
 Source0:	ftp://ftp.xpilot.org/pub/%{name}-%{version}.tar.gz
@@ -40,7 +40,7 @@ Esto le hace óptimo para horas de diversión. El objetivo básico del
 juego es volar y matar - ¿Hace falta decir algo más?
 
 %description -l pl
-Xpilot jest sieciow± gr± dla wielu u¿ytkowników symuluj±c± walki
+Xpilot jest gr± sieciow± dla wielu u¿ytkowników symuluj±c± walki
 powietrzne. Celem gry jest zestrzeliæ przeciwnika lub rekreacyjne
 latanie podczas gry w trybie ,,wycieczki''.
 
