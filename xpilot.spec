@@ -1,76 +1,62 @@
-Summary:	An X Window System based multiplayer aerial combat game.
+Summary:	An X Window System based multiplayer aerial combat game
+Summary(pl):	Sieciowa gra symuluj±ca walki powietrzne
 Name:		xpilot
-Version:	3.6.2
-Release:	6
-Copyright:	GPL
-Group:		Games
-Source:		ftp://ftp.cs.uit.no/pub/games/xpilot/%{name}-%{version}.tar.gz
-Url:		http://www.cs.uit.no/XPilot/
-Patch:		xpilot-3.6.1-config.patch
-Exclusivearch:	%{ix86} sparc
+Version:	4.3.1
+Release:	1
+License:	GPL
+Group:		X11/Applications/Games
+Group(de):	X11/Applikationen/Spiele
+Group(pl):	X11/Aplikacje/Gry
+Source0:	ftp://ftp.cs.uit.no/pub/games/xpilot/%{name}-%{version}.tar.gz
+Patch0:		%{name}-config.patch
+URL:		http://www.cs.uit.no/XPilot/
+BuildRequires:	XFree86-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
-%define		_mandir		/usr/X11R6/man
+%define		_mandir		%{_prefix}/man
 
 %description
 Xpilot is an X Window System based multiplayer game of aerial combat.
-The object of the game is to shoot each other down, or you can use
-the race mode to just fly around.  Xpilot resembles the Commodore 64
-Thrust game, which is similar to Atari's Gravitar and Asteriods (note:
-this is not misspelled).  Unless you already have an xpilot server on
-your network, you'll need to set up the server on one machine, and then
-set up xpilot clients on all of the players' machines.
+The object of the game is to shoot each other down, or you can use the
+race mode to just fly around. Xpilot resembles the Commodore 64 Thrust
+game, which is similar to Atari's Gravitar and Asteriods (note: this
+is not misspelled). Unless you already have an xpilot server on your
+network, you'll need to set up the server on one machine, and then set
+up xpilot clients on all of the players' machines.
+
+%description -l pl
+Xpilot jest sieciow± gr± dla wielu u¿ytkowników symuluj±c± walki
+powietrzne. Celem gry jest zestrzeliæ przeciwnika lub rekreacyjne
+latanie podczas gry w trybie ,,wycieczki''.
 
 %prep
 %setup -q
-%patch -p1
+%patch0 -p1
 
 %build
-xmkmf
+%attr(755,root,root) %{_bindir}/xmkmf
 %{__make} Makefiles
-%{__make} CXXDEBUGFLAGS="$RPM_OPT_FLAGS" \
-	CDEBUGFLAGS="$RPM_OPT_FLAGS" \
+%{__make} \
+	CXXDEBUGFLAGS="%{rpmcflags}" \
+	CDEBUGFLAGS="%{rpmcflags}" \
 	INSTLIBDIR=%{_datadir}/%{name}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/etc/X11/wmconfig
 
-%{__make} install install.man DESTDIR=$RPM_BUILD_ROOT \
+%{__make} install install.man \
+	DESTDIR=$RPM_BUILD_ROOT \
 	INSTLIBDIR=%{_datadir}/%{name}
 
-strip --strip-unneeded $RPM_BUILD_ROOT%{_bindir}/*
-
-gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/* \
-	README README.msub doc/{BUGS,CREDITS,ChangeLog,FAQ,FIXED,README*}
-
-cat > $RPM_BUILD_ROOT/etc/X11/wmconfig/xpilot <<EOF
-xpilot name "xpilot (requires server)"
-xpilot description "Fly/Shoot Arcade Game"
-xpilot group Games/Video
-xpilot exec "xterm -e xpilot -join &"
-EOF
-
-cat > $RPM_BUILD_ROOT/etc/X11/wmconfig/xpilots <<EOF
-xpilots name "xpilots server"
-xpilots description "Fly/Shoot Arcade Game"
-xpilots group Games/Video
-xpilots exec "xterm -e xpilots &"
-EOF
+gzip -9nf README.txt doc/{TODO,README*,F*,C*,B*}	
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc {README,README.msub,doc/{BUGS,CREDITS,ChangeLog,FAQ,FIXED,README*}}.gz
-%attr(755,root,root) %{_bindir}/xpilots
-%attr(755,root,root) %{_bindir}/xpilot
-%attr(755,root,root) %{_bindir}/xp-replay
+%doc *.gz doc/*.gz
+%attr(755,root,root) %{_bindir}/*
 %{_datadir}/xpilot
-%{_mandir}/man1/xpilot.1x.gz
-%{_mandir}/man1/xpilots.1x.gz
-%{_mandir}/man1/xp-replay.1x.gz
-%config /etc/X11/wmconfig/xpilot
-%config /etc/X11/wmconfig/xpilots
+%{_mandir}/man?/*gz
