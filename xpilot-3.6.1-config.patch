@@ -1,0 +1,39 @@
+--- xpilot-3.6.1/Local.config.msf	Thu Mar 20 16:55:08 1997
++++ xpilot-3.6.1/Local.config	Thu Mar 20 16:57:19 1997
+@@ -25,12 +25,12 @@
+ #define	LocalGuru xpilot@xpilot.org	/* The one to contact for problems */
+ #endif /* LocalGuru */
+ 
+-PREFIX = /usr/local/games
++PREFIX = /usr/X11R6
+ 
+ /* Manual pages for games usually go to section 6. */
+-MANSUFFIX = 6
++MANSUFFIX = 1x
+ INSTMANDIR = $(PREFIX)/man/man$(MANSUFFIX)
+-INSTLIBDIR = $(PREFIX)/lib/xpilot
++INSTLIBDIR = $(PREFIX)/lib/X11/xpilot
+ INSTBINDIR = $(PREFIX)/bin
+ 
+ /* #define Log		/* Try to log every server start to log file */
+@@ -55,7 +55,7 @@
+ /*
+  * Enable support for the X Multibuffer Extension.  Needs an extra -lXext somewhere.
+  */
+-/* #define MultibufferExtension	/**/
++#define MultibufferExtension	/**/
+ 
+ /* #define Joystick	/* Joystick support for Linux, needs joystick 0.7 */
+ 
+--- xpilot-3.6.1/doc/man/Imakefile.msf	Thu Mar 20 17:16:29 1997
++++ xpilot-3.6.1/doc/man/Imakefile	Thu Mar 20 17:16:38 1997
+@@ -6,6 +6,6 @@
+ MsubTarget(xpilots.man,xpilots.man.msub)
+ MsubTarget(xp-replay.man,xp-replay.man.msub)
+ 
+-InstallManPage(xpilot,$(INSTMANDIR))
+-InstallManPage(xpilots,$(INSTMANDIR))
+-InstallManPage(xp-replay,$(INSTMANDIR))
++InstallManPage(xpilot,$(MANDIR))
++InstallManPage(xpilots,$(MANDIR))
++InstallManPage(xp-replay,$(MANDIR))
