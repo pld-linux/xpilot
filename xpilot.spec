@@ -23,7 +23,6 @@ URL:		http://www.xpilot.org/
 BuildRequires:	XFree86-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-
 %description
 Xpilot is an X Window System based multiplayer game of aerial combat.
 The object of the game is to shoot each other down, or you can use the
@@ -60,7 +59,7 @@ xmkmf -a
 	PREFIX=/usr \
 	INSTLIBDIR=%{_datadir}/%{name} \
 	INSTBINDIR=%{_bindir} \
-	INSTMANDIR=%{_datadir}/man/man6
+	INSTMANDIR=%{_mandir}/man6
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -71,15 +70,13 @@ install -d $RPM_BUILD_ROOT{%{_desktopdir},%{_pixmapsdir}}
 	PREFIX=/usr \
 	INSTLIBDIR=%{_datadir}/%{name} \
 	INSTBINDIR=%{_bindir} \
-	INSTMANDIR=%{_datadir}/man/man6
+	INSTMANDIR=%{_mandir}/man6
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_pixmapsdir}
 install %{SOURCE2} %{SOURCE3} %{SOURCE4} $RPM_BUILD_ROOT%{_desktopdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
-
- 
 
 %files
 %defattr(644,root,root,755)
