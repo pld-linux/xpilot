@@ -8,7 +8,7 @@ Source:		ftp://ftp.cs.uit.no/pub/games/xpilot/%{name}-%{version}.tar.gz
 Url:		http://www.cs.uit.no/XPilot/
 Patch:		xpilot-3.6.1-config.patch
 Exclusivearch:	%{ix86} sparc
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
 %define		_mandir		/usr/X11R6/man
