@@ -1,14 +1,17 @@
-Summary: An X Window System based multiplayer aerial combat game.
-Name: xpilot
-Version: 3.6.2
-Release: 6
-Copyright: GPL
-Group: Amusements/Games
-Source: ftp://ftp.cs.uit.no/pub/games/xpilot/xpilot-3.6.2.tar.gz
-Url: http://www.cs.uit.no/XPilot/
-Patch: xpilot-3.6.1-config.patch
-Exclusivearch: i386 sparc
-BuildRoot: /var/tmp/xpilot-root
+Summary:	An X Window System based multiplayer aerial combat game.
+Name:		xpilot
+Version:	3.6.2
+Release:	6
+Copyright:	GPL
+Group:		Amusements/Games
+Source:		ftp://ftp.cs.uit.no/pub/games/xpilot/%{name}-%{version}.tar.gz
+Url:		http://www.cs.uit.no/XPilot/
+Patch:		xpilot-3.6.1-config.patch
+Exclusivearch:	%{ix86} sparc
+BuildRoot:	/tmp/%{name}-%{version}-root
+
+%define		_prefix		/usr/X11R6
+%define		_mandir		/usr/X11R6/man
 
 %description
 Xpilot is an X Window System based multiplayer game of aerial combat.
@@ -26,13 +29,21 @@ set up xpilot clients on all of the players' machines.
 %build
 xmkmf
 make Makefiles
-make
+make CXXDEBUGFLAGS="$RPM_OPT_FLAGS" \
+	CDEBUGFLAGS="$RPM_OPT_FLAGS" \
+	INSTLIBDIR=%{_datadir}/%{name}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-mkdir -p $RPM_BUILD_ROOT/etc/X11/wmconfig
+install -d $RPM_BUILD_ROOT/etc/X11/wmconfig
 
-make DESTDIR=$RPM_BUILD_ROOT install install.man
+make install install.man DESTDIR=$RPM_BUILD_ROOT \
+	INSTLIBDIR=%{_datadir}/%{name}
+
+strip --strip-unneeded $RPM_BUILD_ROOT%{_bindir}/*
+
+gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/* \
+	README README.msub doc/{BUGS,CREDITS,ChangeLog,FAQ,FIXED,README*}
 
 cat > $RPM_BUILD_ROOT/etc/X11/wmconfig/xpilot <<EOF
 xpilot name "xpilot (requires server)"
@@ -40,6 +51,7 @@ xpilot description "Fly/Shoot Arcade Game"
 xpilot group Games/Video
 xpilot exec "xterm -e xpilot -join &"
 EOF
+
 cat > $RPM_BUILD_ROOT/etc/X11/wmconfig/xpilots <<EOF
 xpilots name "xpilots server"
 xpilots description "Fly/Shoot Arcade Game"
@@ -51,15 +63,14 @@ EOF
 rm -rf $RPM_BUILD_ROOT
 
 %files
-%defattr(-,root,root)
-%doc README LICENSE README.msub 
-%doc doc
-/usr/X11R6/bin/xpilots
-/usr/X11R6/bin/xpilot
-/usr/X11R6/bin/xp-replay
-/usr/X11R6/lib/X11/xpilot
-/usr/X11R6/man/man1/xpilot.1x
-/usr/X11R6/man/man1/xpilots.1x
-/usr/X11R6/man/man1/xp-replay.1x
+%defattr(644,root,root,755)
+%doc {README,README.msub,doc/{BUGS,CREDITS,ChangeLog,FAQ,FIXED,README*}}.gz
+%attr(755,root,root) %{_bindir}/xpilots
+%attr(755,root,root) %{_bindir}/xpilot
+%attr(755,root,root) %{_bindir}/xp-replay
+%{_datadir}/xpilot
+%{_mandir}/man1/xpilot.1x.gz
+%{_mandir}/man1/xpilots.1x.gz
+%{_mandir}/man1/xp-replay.1x.gz
 %config /etc/X11/wmconfig/xpilot
 %config /etc/X11/wmconfig/xpilots
