@@ -1,5 +1,9 @@
-Name=xpilot
+[Desktop Entry]
+Name=XPilot
+Comment=XPilot multiplayer aerial combat game (requires server)"
+Comment[pl]=XPilot - sieciowa gra symuluj±ca walki powietrzne
+Icon=xpilot.png
+Exec=xpilot -join
+Terminal=0
 Type=Application
-Comment=xpilot game (requires server)
-Comment[pl]=Gra xpilot (wymaga serwera)
-Exec=xterm -e xpilot -join
+# vi: encoding=utf-8
