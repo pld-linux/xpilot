@@ -13,6 +13,7 @@ Release:	2
 License:	GPL
 Group:		X11/Applications/Games
 Source0:	ftp://ftp.xpilot.org/pub/%{name}-%{version}.tar.gz
+# Source0-md5:	f2774fda5938629001ed65a311554c01
 Source1:	%{name}.png
 Source2:	%{name}.desktop
 Source3:	%{name}-server.desktop
