@@ -1,4 +1,5 @@
 [Desktop Entry]
+Encoding=UTF-8
 Name=XPilot (map editor)
 Name[pl]=XPilot (edytor map)
 Comment=XPilot game map editor
@@ -7,4 +8,5 @@ Icon=xpilot.png
 Exec=xp-mapedit
 Terminal=0
 Type=Application
+Categories=Application;Game;Arcade
 # vi: encoding=utf-8
