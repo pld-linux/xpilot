@@ -9,7 +9,7 @@ Summary(pl):	Gra sieciowa symuluj±ca walki powietrzne
 Summary(pt_BR):	Jogo de vôo no estilo arcade
 Name:		xpilot
 Version:	4.5.4
-Release:	3
+Release:	4
 License:	GPL
 Group:		X11/Applications/Games
 Source0:	ftp://ftp.xpilot.org/pub/%{name}-%{version}.tar.gz
