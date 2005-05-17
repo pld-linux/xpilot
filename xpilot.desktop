@@ -2,7 +2,7 @@
 Encoding=UTF-8
 Name=XPilot
 Comment=XPilot multiplayer aerial combat game (requires server)
-Comment[pl]=XPilot - gra sieciowa symuluj�ąca walki powietrzne (wymaga serwera)
+Comment[pl]=XPilot - gra sieciowa symulująca walki powietrzne (wymaga serwera)
 Icon=xpilot.png
 Exec=xpilot
 Terminal=false
