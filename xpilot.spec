@@ -4,9 +4,9 @@
 # - maybe move all xpilot desktop files to Games/Arcade/XPilot ?
 #
 Summary:	An X Window System based multiplayer aerial combat game
-Summary(es):	Juego de vuelo en estilo arcade
-Summary(pl):	Gra sieciowa symuluj±ca walki powietrzne
-Summary(pt_BR):	Jogo de vôo no estilo arcade
+Summary(es.UTF-8):   Juego de vuelo en estilo arcade
+Summary(pl.UTF-8):   Gra sieciowa symulujÄ…ca walki powietrzne
+Summary(pt_BR.UTF-8):   Jogo de vÃ´o no estilo arcade
 Name:		xpilot
 Version:	4.5.4
 Release:	4
@@ -32,19 +32,19 @@ is not misspelled). Unless you already have an xpilot server on your
 network, you'll need to set up the server on one machine, and then set
 up xpilot clients on all of the players' machines.
 
-%description -l es
-xpilot es un juego de ación que permite diversos jugadores en red.
-Esto le hace óptimo para horas de diversión. El objetivo básico del
-juego es volar y matar - ¿Hace falta decir algo más?
+%description -l es.UTF-8
+xpilot es un juego de aciÃ³n que permite diversos jugadores en red.
+Esto le hace Ã³ptimo para horas de diversiÃ³n. El objetivo bÃ¡sico del
+juego es volar y matar - Â¿Hace falta decir algo mÃ¡s?
 
-%description -l pl
-Xpilot jest gr± sieciow± dla wielu u¿ytkowników symuluj±c± walki
-powietrzne. Celem gry jest zestrzeliæ przeciwnika lub rekreacyjne
+%description -l pl.UTF-8
+Xpilot jest grÄ… sieciowÄ… dla wielu uÅ¼ytkownikÃ³w symulujÄ…cÄ… walki
+powietrzne. Celem gry jest zestrzeliÄ‡ przeciwnika lub rekreacyjne
 latanie podczas gry w trybie ,,wycieczki''.
 
-%description -l pt_BR
-xpilot é um jogo de ação que permite diversos jogadores em rede. Isto
-torna-o ótimo para horas de diversão. O objetivo básico do jogo é voar
+%description -l pt_BR.UTF-8
+xpilot Ã© um jogo de aÃ§Ã£o que permite diversos jogadores em rede. Isto
+torna-o Ã³timo para horas de diversÃ£o. O objetivo bÃ¡sico do jogo Ã© voar
 e matar - precisa dizer mais?
 
 %prep
