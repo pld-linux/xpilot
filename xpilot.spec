@@ -4,9 +4,9 @@
 # - maybe move all xpilot desktop files to Games/Arcade/XPilot ?
 #
 Summary:	An X Window System based multiplayer aerial combat game
-Summary(es.UTF-8):   Juego de vuelo en estilo arcade
-Summary(pl.UTF-8):   Gra sieciowa symulująca walki powietrzne
-Summary(pt_BR.UTF-8):   Jogo de vôo no estilo arcade
+Summary(es.UTF-8):	Juego de vuelo en estilo arcade
+Summary(pl.UTF-8):	Gra sieciowa symulująca walki powietrzne
+Summary(pt_BR.UTF-8):	Jogo de vôo no estilo arcade
 Name:		xpilot
 Version:	4.5.4
 Release:	4
