@@ -1,10 +1,9 @@
 [Desktop Entry]
-Encoding=UTF-8
 Name=XPilot (map editor)
 Name[pl]=XPilot (edytor map)
 Comment=XPilot game map editor
 Comment[pl]=Edytor map do gry XPilot
-Icon=xpilot.png
+Icon=xpilot
 Exec=xp-mapedit
 Terminal=false
 Type=Application

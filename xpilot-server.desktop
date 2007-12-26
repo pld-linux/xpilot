@@ -1,10 +1,9 @@
 [Desktop Entry]
-Encoding=UTF-8
 Name=XPilots (server)
 Name[pl]=XPilot (serwer)
 Comment=XPilot game server
 Comment[pl]=Serwer gry XPilot
-Icon=xpilot.png
+Icon=xpilot
 Exec=xpilots
 Terminal=true
 Type=Application
