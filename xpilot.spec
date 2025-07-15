@@ -49,7 +49,7 @@ e matar - precisa dizer mais?
 
 %prep
 %setup -q
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 xmkmf -a
